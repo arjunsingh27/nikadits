@@ -275,11 +275,36 @@
         <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 gradient-animate">Let's Create Together</h2>
             <div class="max-w-lg mx-auto">
-                <form class="space-y-6 p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10">
-                    <input type="text" class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" placeholder="Your Name">
-                    <input type="email" class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" placeholder="Email Address">
-                    <textarea class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" rows="4" placeholder="Your Message"></textarea>
-                    <button class="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg relative overflow-hidden group">
+                <form 
+                    action="/api/form" 
+                    method="POST"
+                    class="space-y-6 p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10"
+                >
+                    <input 
+                        type="text" 
+                        name="name"
+                        required
+                        class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" 
+                        placeholder="Your Name"
+                    >
+                    <input 
+                        type="email" 
+                        name="email"
+                        required
+                        class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" 
+                        placeholder="Email Address"
+                    >
+                    <textarea 
+                        name="message"
+                        required
+                        class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" 
+                        rows="4" 
+                        placeholder="Your Message"
+                    ></textarea>
+                    <button 
+                        type="submit"
+                        class="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg relative overflow-hidden group"
+                    >
                         <span class="relative z-10">Send Message</span>
                         <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                     </button>
@@ -287,7 +312,6 @@
             </div>
         </div>
     </section>
-
     <script>
         // Mobile menu toggle
         const menuBtn = document.getElementById('menuBtn');
