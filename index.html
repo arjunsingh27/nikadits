@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikAdits - Professional Video Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .gradient-animate {
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+        }
+        .blur-blob {
+            animation: blob 7s infinite;
+        }
+        @keyframes blob {
+            0%, 100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-0">
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] blur-[150px] bg-indigo-500/30 blur-blob"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] blur-[150px] bg-purple-500/30 blur-blob"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] blur-[150px] bg-blue-500/20 blur-blob"></div>
+    </div>
+
+    <div class="fixed  left-4 z-50">
+        <div class="w-40 h-40 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex group-hover:scale-110 transition-all" 
+            style="background-image: url('./Assets/2.png'); background-size: cover; background-position: left;">
+        </div>
+    </div>
+
+    <!-- Grid Overlay -->
+    <div class="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:75px_75px] z-0"></div>
+
+    <!-- Navigation -->
+  <!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 px-4 pb-4">
+    <div class="mx-auto max-w-md bg-slate-900/50 backdrop-blur-xl border border-white/5 rounded-full h-16">
+        <div class="flex items-center justify-around h-full px-6">
+            <a href="#home" class="flex flex-col items-center text-gray-300 hover:text-white transition-all hover:scale-105 group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <span class="text-xs mt-1">Home</span>
+                <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-100 transition-all"></span>
+            </a>
+            
+            <a href="#work" class="flex flex-col items-center text-gray-300 hover:text-white transition-all hover:scale-105 group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span class="text-xs mt-1">Work</span>
+                <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-100 transition-all"></span>
+            </a>
+            
+            <a href="#skills" class="flex flex-col items-center text-gray-300 hover:text-white transition-all hover:scale-105 group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                </svg>
+                <span class="text-xs mt-1">Skills</span>
+                <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-100 transition-all"></span>
+            </a>
+            
+            <a href="#contact" class="flex flex-col items-center text-gray-300 hover:text-white transition-all hover:scale-105 group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span class="text-xs mt-1">Contact</span>
+                <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-100 transition-all"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <div class="text-center space-y-8 p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 animate-float">
+            <div class="relative inline-block">
+                <h1 class="text-5xl md:text-7xl font-bold">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 gradient-animate">Creative</span>
+                    <br>Video Editor
+                </h1>
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 blur-lg opacity-30"></div>
+            </div>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">Creating cinematic experiences through innovative editing and motion design</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#work" class="group px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg relative overflow-hidden">
+                    <span class="relative z-10">View Work</span>
+                    <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                </a>
+                <a href="#contact" class="group px-8 py-3 relative overflow-hidden rounded-lg border border-indigo-500/50">
+                    <span class="relative z-10">Contact Me</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 gradient-animate">Skills & Expertise</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-indigo-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all" 
+                    style="background-image: url('./Assets/pngwing.com.png'); background-size: cover; background-position: center;">
+               </div>
+                    <h3 class="text-center font-semibold text-lg">Final Cut Pro</h3>
+                    <div class="mt-2 text-center text-sm text-gray-400">Professional Editing</div>
+                </div>
+                <!-- Skill Second  -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-indigo-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all" 
+                    style="background-image: url('./Assets/canva.png'); background-size: cover; background-position: center;">
+               </div>
+                    <h3 class="text-center font-semibold text-lg">Canva</h3>
+                    <div class="mt-2 text-center text-sm text-gray-400">Graphic Designing</div>
+                </div>
+                <!-- Skill Third  -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-indigo-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all" 
+                    style="background-image: url('./Assets/figma.png'); background-size: cover; background-position: center;">
+               </div>
+                    <h3 class="text-center font-semibold text-lg">Figma</h3>
+                    <div class="mt-2 text-center text-sm text-gray-400">Web Designing</div>
+                </div>
+                <!-- Fourth Third  -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-indigo-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all" 
+                    style="background-image: url('./Assets/capcut.jpg'); background-size: cover; background-position: center;">
+               </div>
+                    <h3 class="text-center font-semibold text-lg">Capcut</h3>
+                    <div class="mt-2 text-center text-sm text-gray-400">Reels Editing</div>
+                </div>
+                <!-- Repeat for other skills with similar styling -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+ <!-- Work Section -->
+<section id="work" class="py-20 relative">
+    <div class="container mx-auto px-4 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 gradient-animate">Featured Projects</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10">
+                <div class="aspect-video w-full">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1"
+                        title="Commercial Campaign"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/95 via-slate-900/75 to-transparent">
+                    <h3 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">Cinematic Travel Edit</h3>
+                    <p class="text-gray-300 mt-2">Adventure through the Norwegian Fjords</p>
+                    <div class="flex items-center gap-4 mt-4">
+                        <span class="text-sm text-gray-400 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                            </svg>
+                            4K
+                        </span>
+                        <span class="text-sm text-gray-400 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                            </svg>
+                            3:45
+                        </span>
+                    </div>
+                </div>
+                <div class="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-all pointer-events-none"></div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10">
+                <div class="aspect-video w-full">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2"
+                        title="Music Video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/95 via-slate-900/75 to-transparent">
+                    <h3 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">Music Video Edit</h3>
+                    <p class="text-gray-300 mt-2">Dynamic rhythm-driven montage</p>
+                    <div class="flex items-center gap-4 mt-4">
+                        <span class="text-sm text-gray-400 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                            </svg>
+                            4K
+                        </span>
+                        <span class="text-sm text-gray-400 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                            </svg>
+                            2:30
+                        </span>
+                    </div>
+                </div>
+                <div class="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-all pointer-events-none"></div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10">
+                <div class="aspect-video w-full">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/watch?v=_eMkhBKSErM&t=499s"
+                        title="Commercial"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/95 via-slate-900/75 to-transparent">
+                    <h3 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">Product Commercial</h3>
+                    <p class="text-gray-300 mt-2">Luxury watch brand showcase</p>
+                    <div class="flex items-center gap-4 mt-4">
+                        <span class="text-sm text-gray-400 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                            </svg>
+                            4K
+                        </span>
+                        <span class="text-sm text-gray-400 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                            </svg>
+                            1:30
+                        </span>
+                    </div>
+                </div>
+                <div class="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-all pointer-events-none"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 gradient-animate">Let's Create Together</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6 p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10">
+                    <input type="text" class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" placeholder="Your Name">
+                    <input type="email" class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" placeholder="Email Address">
+                    <textarea class="w-full p-4 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-500 transition-all" rows="4" placeholder="Your Message"></textarea>
+                    <button class="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg relative overflow-hidden group">
+                        <span class="relative z-10">Send Message</span>
+                        <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('section > div').forEach((el) => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
